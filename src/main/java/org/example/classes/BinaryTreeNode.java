@@ -1,5 +1,8 @@
 package org.example.classes;
 
+import org.example.annotations.Generatable;
+
+@Generatable
 public class BinaryTreeNode {
     private Integer data;
     private BinaryTreeNode left;
@@ -29,5 +32,16 @@ public class BinaryTreeNode {
 
     public void setRight(BinaryTreeNode right) {
         this.right = right;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append("BinaryTreeNode{")
+                .append("data=").append(data)
+                .append(", left=").append(left != null ? left.toString() : "null")
+                .append(", right=").append(right != null ? right.toString() : "null")
+                .append("}")
+                .toString();
     }
 }
